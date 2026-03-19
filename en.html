@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CepteKalan - Support Center</title>
   <meta name="description" content="Official CepteKalan support center and frequently asked questions." />
-  <link rel="icon" type="image/png" href="../assets/logo/logo.png" />
-  <link rel="apple-touch-icon" href="../assets/logo/logo.png" />
+  <link rel="icon" type="image/png" href="./logo.png" />
+  <link rel="apple-touch-icon" href="./logo.png" />
   <style>
     :root{
       --bg:#F2F2F7;
@@ -74,6 +74,7 @@
     }
     h1{margin:0 0 8px;font-size:clamp(1.58rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.3px}
     .subtitle{margin:0;color:var(--text-2);max-width:760px;font-size:clamp(.98rem,1.35vw,1.07rem)}
+    .hero-date{margin-top:10px;color:var(--text-3);font-size:clamp(.87rem,1.05vw,.94rem)}
     .quick-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
     .pill{
       display:inline-flex;
@@ -107,6 +108,7 @@
     }
     .card h2{margin:0 0 10px;font-size:clamp(1.05rem,1.8vw,1.2rem);line-height:1.25}
     .card p{margin:0 0 10px;color:var(--text-2);font-size:clamp(.95rem,1.2vw,1rem)}
+    .card p:last-child{margin-bottom:0}
     .list{margin:0;padding-left:18px;color:var(--text-2);font-size:clamp(.95rem,1.2vw,1rem)}
     .list li{margin:0 0 8px}
     .faq{display:grid;gap:10px}
@@ -163,9 +165,7 @@
       transform:translateY(-4px);
       transition:opacity .25s ease, transform .25s ease, padding .25s ease;
     }
-    .faq-item[open] .faq-content{
-      grid-template-rows:1fr;
-    }
+    .faq-item[open] .faq-content{grid-template-rows:1fr}
     .faq-item[open] .faq-content-inner{
       padding:2px 14px 12px;
       opacity:1;
@@ -175,8 +175,6 @@
     .danger{color:var(--danger);font-weight:700}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-    .hero-date{margin-top:10px;color:var(--text-3);font-size:clamp(.87rem,1.05vw,.94rem)}
-    .card p:last-child{margin-bottom:0}
     .faq-item summary:focus-visible,.pill:focus-visible,.lang a:focus-visible,a:focus-visible{
       outline:2px solid rgba(0,122,255,.45);
       outline-offset:2px;
@@ -192,6 +190,7 @@
     @media (max-width:780px){
       .grid{grid-template-columns:1fr}
       .brand img{width:30px;height:30px}
+      .hero{padding:22px}
     }
   </style>
 </head>
@@ -199,7 +198,7 @@
   <div class="wrap">
     <header class="top">
       <div class="brand">
-        <img src="../assets/logo/logo.png" alt="CepteKalan logo" />
+        <img src="./logo.png" alt="CepteKalan logo" />
         <span>CepteKalan</span>
       </div>
       <div class="lang"><a href="./index.html">TR</a> | EN</div>
