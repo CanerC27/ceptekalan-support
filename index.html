@@ -3,87 +3,269 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CepteKalan - Destek</title>
-  <meta name="description" content="CepteKalan destek sayfası" />
+  <title>CepteKalan - Destek Merkezi</title>
+  <meta name="description" content="CepteKalan resmi destek merkezi ve sık sorulan sorular." />
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png" />
+  <link rel="apple-touch-icon" href="../assets/logo/logo.png" />
   <style>
     :root{
       --bg:#F2F2F7;
       --surface:#FFFFFF;
+      --surface-soft:#F9FAFF;
       --line:rgba(60,60,67,.12);
+      --line-strong:rgba(60,60,67,.2);
       --text:#000000;
       --text-2:#3C3C43;
       --text-3:#8E8E93;
       --brand:#007AFF;
       --ok:#34C759;
       --danger:#FF3B30;
-      --radius:14px;
+      --radius:18px;
+      --shadow:0 14px 36px rgba(16,24,40,.08);
+      --shadow-soft:0 8px 20px rgba(16,24,40,.05);
     }
     *{box-sizing:border-box}
     body{
-      margin:0;background:var(--bg);color:var(--text);
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 560px at -8% -12%, rgba(0,122,255,.16), transparent 64%),
+        radial-gradient(980px 540px at 110% -12%, rgba(52,199,89,.11), transparent 60%),
+        radial-gradient(900px 500px at 50% 110%, rgba(94,92,230,.08), transparent 60%),
+        var(--bg);
       font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;
     }
-    .wrap{max-width:860px;margin:36px auto;padding:0 16px}
+    .wrap{
+      width:100%;
+      max-width:none;
+      margin:0;
+      padding:12px clamp(12px,2.2vw,30px) 24px;
+    }
     .top{
-      display:flex;justify-content:space-between;align-items:center;margin-bottom:14px
+      display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;
+      padding:11px 13px;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.82);backdrop-filter:blur(10px);
+      box-shadow:var(--shadow-soft);
+      position:sticky;top:10px;z-index:20;
     }
-    .brand{font-weight:700;letter-spacing:.2px}
-    .lang{font-weight:600;color:var(--text-3)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand img{width:34px;height:34px;border-radius:8px;display:block}
+    .brand span{font-size:clamp(1.05rem,1.4vw,1.22rem)}
+    .lang{font-size:clamp(.82rem,.9vw,.92rem);color:var(--text-3);font-weight:600}
     .lang a{color:var(--brand);text-decoration:none}
-    .hero,.card{
-      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)
+    .hero,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+    .hero{
+      padding:28px;
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(145deg, rgba(0,122,255,.09), rgba(255,255,255,.95) 44%),
+        var(--surface);
+      border-color:var(--line-strong);
     }
-    .hero{padding:20px}
-    .hero h1{margin:0 0 6px;font-size:28px;line-height:1.2}
-    .hero p{margin:0;color:var(--text-2)}
-    .grid{display:grid;gap:12px;margin-top:12px}
-    .card{padding:16px}
-    .card h2{margin:0 0 8px;font-size:18px}
-    .card p{margin:0 0 8px}
     .badge{
-      display:inline-block;padding:4px 10px;border-radius:999px;
-      background:rgba(0,122,255,.08);color:var(--brand);font-weight:600;font-size:13px
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      background:rgba(0,122,255,.10);
+      color:var(--brand);
+      margin-bottom:10px;
     }
+    h1{margin:0 0 8px;font-size:clamp(1.58rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.3px}
+    .subtitle{margin:0;color:var(--text-2);max-width:760px;font-size:clamp(.98rem,1.35vw,1.07rem)}
+    .quick-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .pill{
+      display:inline-flex;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:14px;
+      color:var(--text-2);
+      text-decoration:none;
+      background:var(--surface-soft);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease, background-color .2s ease;
+    }
+    .pill:hover{
+      border-color:rgba(0,122,255,.38);
+      color:var(--brand);
+      background:#fff;
+      transform:translateY(-1px);
+      box-shadow:0 8px 14px rgba(0,122,255,.12);
+      text-decoration:none;
+    }
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+    .card{
+      padding:20px;
+      transition:transform .2s ease, box-shadow .22s ease, border-color .22s ease;
+      box-shadow:0 1px 0 rgba(16,24,40,.02);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(0,122,255,.24);
+      box-shadow:0 14px 30px rgba(16,24,40,.08);
+    }
+    .card h2{margin:0 0 10px;font-size:clamp(1.05rem,1.8vw,1.2rem);line-height:1.25}
+    .card p{margin:0 0 10px;color:var(--text-2);font-size:clamp(.95rem,1.2vw,1rem)}
+    .list{margin:0;padding-left:18px;color:var(--text-2);font-size:clamp(.95rem,1.2vw,1rem)}
+    .list li{margin:0 0 8px}
+    .faq{display:grid;gap:10px}
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--surface-soft);
+      overflow:hidden;
+      transition:border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+    }
+    .faq-item:hover{
+      border-color:rgba(0,122,255,.28);
+      box-shadow:0 6px 16px rgba(0,0,0,.05);
+    }
+    .faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding:12px 14px;
+      font-weight:700;
+      color:var(--text);
+      position:relative;
+      padding-right:34px;
+      transition:color .2s ease, background-color .25s ease;
+    }
+    .faq-item[open] summary{color:var(--brand);background:rgba(0,122,255,.05)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{
+      content:"+";
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--brand);
+      font-weight:800;
+      font-size:18px;
+      line-height:1;
+      transition:transform .25s ease;
+    }
+    .faq-item[open] summary::after{
+      content:"-";
+      transform:translateY(-50%) rotate(180deg);
+    }
+    .faq-content{
+      display:grid;
+      grid-template-rows:0fr;
+      transition:grid-template-rows .28s ease;
+    }
+    .faq-content-inner{
+      overflow:hidden;
+      padding:0 14px;
+      color:var(--text-2);
+      font-size:clamp(.94rem,1.2vw,.99rem);
+      opacity:.85;
+      transform:translateY(-4px);
+      transition:opacity .25s ease, transform .25s ease, padding .25s ease;
+    }
+    .faq-item[open] .faq-content{
+      grid-template-rows:1fr;
+    }
+    .faq-item[open] .faq-content-inner{
+      padding:2px 14px 12px;
+      opacity:1;
+      transform:translateY(0);
+    }
+    .ok{color:var(--ok);font-weight:700}
+    .danger{color:var(--danger);font-weight:700}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-    .footer{margin-top:12px;color:var(--text-3);font-size:13px}
+    .hero-date{margin-top:10px;color:var(--text-3);font-size:clamp(.87rem,1.05vw,.94rem)}
+    .card p:last-child{margin-bottom:0}
+    .faq-item summary:focus-visible,.pill:focus-visible,.lang a:focus-visible,a:focus-visible{
+      outline:2px solid rgba(0,122,255,.45);
+      outline-offset:2px;
+      border-radius:10px;
+    }
+    .footer{
+      margin-top:18px;
+      color:var(--text-3);
+      font-size:13px;
+      text-align:center;
+      padding:8px 0 2px;
+    }
+    @media (max-width:780px){
+      .grid{grid-template-columns:1fr}
+      .brand img{width:30px;height:30px}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <div class="brand">CepteKalan</div>
+    <header class="top">
+      <div class="brand">
+        <img src="../assets/logo/logo.png" alt="CepteKalan logosu" />
+        <span>CepteKalan</span>
+      </div>
       <div class="lang">TR | <a href="./en.html">EN</a></div>
-    </div>
+    </header>
 
     <section class="hero">
-      <span class="badge">Destek Merkezi</span>
-      <h1>CepteKalan - Destek</h1>
-      <p>Gelir-gider takibi, hatırlatıcılar ve uygulama kullanımı için resmi destek sayfası.</p>
+      <div class="badge">Destek Merkezi</div>
+      <h1>CepteKalan ile finans takibini daha kolay yönetin</h1>
+      <p class="subtitle">
+        Bu sayfada uygulama ile ilgili temel kullanım bilgileri, sık sorulan sorular, iletişim ve gizlilik bağlantılarını bulabilirsiniz.
+      </p>
+      <p class="hero-date">Son guncelleme: 20.03.2026</p>
+      <nav class="quick-links">
+        <a class="pill" href="./privacy.html">Gizlilik Politikasi</a>
+        <a class="pill" href="mailto:caner.celik.2704@gmail.com">E-posta ile ulas</a>
+      </nav>
     </section>
 
-    <div class="grid">
+    <main class="grid">
       <section class="card">
-        <h2>İletişim</h2>
-        <p>
-          <a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a>
-        </p>
+        <h2>Uygulama Ozellikleri</h2>
+        <ul class="list">
+          <li>Gelir ve gider ekleme, kategorilendirme ve detayli kayit takibi.</li>
+          <li>Tek seferlik veya tekrar eden islemlerle duzenli planlama.</li>
+          <li>Hatirlaticilar ve bildirimler ile odemeleri kacirmama.</li>
+          <li>TRY, USD, EUR ve GBP destekli para birimi yonetimi.</li>
+          <li>Acik, koyu ve sistem temasina uyumlu arayuz.</li>
+        </ul>
       </section>
 
       <section class="card">
-        <h2>Sık Sorulan Sorular</h2>
-        <p><strong>Verilerim nerede saklanır?</strong><br/>Kayıtlarınız ağırlıklı olarak cihazınızda saklanır.</p>
-        <p><strong>Bildirimler görünmüyor, ne yapmalıyım?</strong><br/>Cihaz ayarlarından uygulama bildirim izinlerini kontrol edin.</p>
+        <h2>Iletisim</h2>
+        <p>Destek, geri bildirim veya hata bildirimi icin:</p>
+        <p><a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a></p>
+        <p>Genelde en kisa surede donus saglanir.</p>
       </section>
 
       <section class="card">
-        <h2>Politikalar</h2>
-        <p><a href="./privacy.html">Gizlilik Politikası (TR)</a></p>
-        <p><a href="./privacy-en.html">Privacy Policy (EN)</a></p>
+        <h2>Sik Sorulan Sorular</h2>
+        <div class="faq">
+          <details class="faq-item" open>
+            <summary>Verilerim nerede saklaniyor?</summary>
+            <div class="faq-content"><div class="faq-content-inner">Kayitlariniz agirlikli olarak cihazinizda saklanir.</div></div>
+          </details>
+          <details class="faq-item">
+            <summary>Bildirim gelmiyor, ne yapmaliyim?</summary>
+            <div class="faq-content"><div class="faq-content-inner">Cihaz ayarlarindan CepteKalan icin bildirim izinlerinin acik oldugunu kontrol edin.</div></div>
+          </details>
+          <details class="faq-item">
+            <summary>Para birimini degistirebilir miyim?</summary>
+            <div class="faq-content"><div class="faq-content-inner">Evet, Ayarlar bolumunden varsayilan para birimini degistirebilirsiniz.</div></div>
+          </details>
+        </div>
       </section>
-    </div>
 
-    <div class="footer">© 2026 Caner Celik</div>
+      <section class="card">
+        <h2>Yardimli Kontrol Listesi</h2>
+        <ul class="list">
+          <li><span class="ok">Bildirim izni:</span> Acik olmali.</li>
+          <li><span class="ok">Tarih/saat:</span> Cihaz saati dogru olmali.</li>
+          <li><span class="danger">Veri temizleme:</span> Ayarlardaki "tum verileri temizle" islemi geri alinmaz.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">© 2026 Caner Celik - CepteKalan Destek</footer>
   </div>
 </body>
 </html>
