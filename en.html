@@ -4,81 +4,73 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CepteKalan - Support</title>
-  <meta name="description" content="CepteKalan support page." />
+  <meta name="description" content="Official support page for CepteKalan" />
   <style>
-    :root {
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --text: #121417;
-      --muted: #5f6673;
-      --line: #e7eaf0;
-      --brand: #2f6fed;
+    :root{
+      --bg:#F2F2F7;--surface:#FFFFFF;--line:rgba(60,60,67,.12);
+      --text:#000000;--text-2:#3C3C43;--text-3:#8E8E93;
+      --brand:#007AFF;--radius:14px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.65;
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;
     }
-    .wrap { max-width: 860px; margin: 40px auto; padding: 0 16px; }
-    .topbar {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 16px;
+    .wrap{max-width:860px;margin:36px auto;padding:0 16px}
+    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+    .brand{font-weight:700}
+    .lang{font-weight:600;color:var(--text-3)}
+    .lang a{color:var(--brand);text-decoration:none}
+    .hero,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+    .hero{padding:20px}
+    .hero h1{margin:0 0 6px;font-size:28px;line-height:1.2}
+    .hero p{margin:0;color:var(--text-2)}
+    .grid{display:grid;gap:12px;margin-top:12px}
+    .card{padding:16px}
+    .card h2{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 8px}
+    .badge{
+      display:inline-block;padding:4px 10px;border-radius:999px;
+      background:rgba(0,122,255,.08);color:var(--brand);font-weight:600;font-size:13px
     }
-    .lang a {
-      text-decoration: none; color: var(--muted); font-weight: 600; margin-right: 8px;
-    }
-    .lang a.active { color: var(--brand); }
-    .hero, .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      padding: 18px;
-    }
-    .hero h1 { margin: 0 0 8px 0; font-size: 28px; }
-    .hero p { margin: 0; color: var(--muted); }
-    .grid { display: grid; gap: 14px; margin-top: 14px; }
-    .card h2 { margin: 0 0 8px 0; font-size: 18px; }
-    .card p { margin: 0; }
-    a { color: var(--brand); }
-    .footer { color: var(--muted); font-size: 14px; margin-top: 14px; }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .footer{margin-top:12px;color:var(--text-3);font-size:13px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topbar">
-      <strong>CepteKalan</strong>
+    <div class="top">
+      <div class="brand">CepteKalan</div>
       <div class="lang"><a href="./index.html">TR</a> | EN</div>
     </div>
 
     <section class="hero">
+      <span class="badge">Support Center</span>
       <h1>CepteKalan - Support</h1>
-      <p>Support page for expense tracking, reminders, and app usage.</p>
+      <p>Official support page for expense tracking, reminders, and app usage.</p>
     </section>
 
     <div class="grid">
       <section class="card">
         <h2>Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a>
-        </p>
+        <p><a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a></p>
       </section>
 
       <section class="card">
         <h2>FAQ</h2>
-        <p><strong>Where is my data stored?</strong><br />Your data is stored on your device.</p>
-        <p><strong>Reminders are not working. What should I do?</strong><br />Please make sure notification permission is enabled in device settings.</p>
+        <p><strong>Where is my data stored?</strong><br/>Your records are primarily stored on your device.</p>
+        <p><strong>Notifications are not working. What should I do?</strong><br/>Please check notification permissions in your device settings.</p>
       </section>
 
       <section class="card">
-        <h2>Privacy</h2>
+        <h2>Policies</h2>
         <p><a href="./privacy.html">Gizlilik Politikası (TR)</a></p>
         <p><a href="./privacy-en.html">Privacy Policy (EN)</a></p>
       </section>
     </div>
 
-    <p class="footer">© 2026 Caner Celik</p>
+    <div class="footer">© 2026 Caner Celik</div>
   </div>
 </body>
 </html>
