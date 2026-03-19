@@ -4,66 +4,163 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CepteKalan - Privacy Policy</title>
+  <meta name="description" content="CepteKalan privacy policy." />
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png" />
+  <link rel="apple-touch-icon" href="../assets/logo/logo.png" />
   <style>
     :root{
-      --bg:#F2F2F7;--surface:#FFFFFF;--line:rgba(60,60,67,.12);
-      --text:#000000;--text-2:#3C3C43;--text-3:#8E8E93;
-      --brand:#007AFF;--radius:14px;
+      --bg:#F2F2F7;
+      --surface:#FFFFFF;
+      --surface-soft:#F9FAFF;
+      --line:rgba(60,60,67,.12);
+      --line-strong:rgba(60,60,67,.2);
+      --text:#000000;
+      --text-2:#3C3C43;
+      --text-3:#8E8E93;
+      --brand:#007AFF;
+      --radius:18px;
+      --shadow:0 14px 36px rgba(16,24,40,.08);
+      --shadow-soft:0 8px 20px rgba(16,24,40,.05);
     }
     *{box-sizing:border-box}
     body{
-      margin:0;background:var(--bg);color:var(--text);
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 560px at -8% -12%, rgba(0,122,255,.16), transparent 64%),
+        radial-gradient(980px 540px at 110% -12%, rgba(52,199,89,.11), transparent 60%),
+        radial-gradient(900px 500px at 50% 110%, rgba(94,92,230,.08), transparent 60%),
+        var(--bg);
       font:16px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;
     }
-    .wrap{max-width:860px;margin:36px auto;padding:0 16px}
-    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-    .lang{font-weight:600;color:var(--text-3)}
+    .wrap{
+      width:100%;
+      max-width:none;
+      margin:0;
+      padding:12px clamp(12px,2.2vw,30px) 24px;
+    }
+    .top{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;
+      padding:11px 13px;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.82);backdrop-filter:blur(10px);
+      box-shadow:var(--shadow-soft);
+      position:sticky;top:10px;z-index:20;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{width:34px;height:34px;border-radius:8px;display:block}
+    .brand span{font-size:clamp(1.05rem,1.4vw,1.22rem)}
+    .lang{font-size:clamp(.82rem,.9vw,.92rem);color:var(--text-3);font-weight:600}
     .lang a{color:var(--brand);text-decoration:none}
     .hero,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
-    .hero{padding:20px}
-    .hero h1{margin:0 0 6px;font-size:28px}
-    .hero p{margin:0;color:var(--text-3)}
-    .grid{display:grid;gap:12px;margin-top:12px}
-    .card{padding:16px}
-    .card h2{margin:0 0 8px;font-size:18px}
-    .card p{margin:0}
+    .hero{
+      padding:28px;
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(145deg, rgba(0,122,255,.09), rgba(255,255,255,.95) 44%),
+        var(--surface);
+      border-color:var(--line-strong);
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      background:rgba(0,122,255,.10);
+      color:var(--brand);
+      margin-bottom:10px;
+    }
+    h1{margin:0 0 8px;font-size:clamp(1.58rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.3px}
+    .subtitle{margin:0;color:var(--text-3);font-size:clamp(.95rem,1.2vw,1rem)}
+    .grid{display:grid;gap:16px;margin-top:16px}
+    .card{
+      padding:20px;
+      transition:transform .2s ease, box-shadow .22s ease, border-color .22s ease;
+      box-shadow:0 1px 0 rgba(16,24,40,.02);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(0,122,255,.24);
+      box-shadow:0 14px 30px rgba(16,24,40,.08);
+    }
+    .card h2{margin:0 0 10px;font-size:clamp(1.05rem,1.8vw,1.2rem)}
+    .card p{margin:0;color:var(--text-2);font-size:clamp(.95rem,1.2vw,1rem)}
+    .back{margin-top:14px;display:inline-block}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
+    .back:focus-visible,.lang a:focus-visible,a:focus-visible{
+      outline:2px solid rgba(0,122,255,.45);
+      outline-offset:2px;
+      border-radius:10px;
+    }
+    .footer{
+      margin-top:18px;
+      color:var(--text-3);
+      font-size:13px;
+      text-align:center;
+      padding:8px 0 2px;
+    }
+    @media (max-width:780px){
+      .brand img{width:30px;height:30px}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <strong>CepteKalan</strong>
+    <header class="top">
+      <div class="brand">
+        <img src="../assets/logo/logo.png" alt="CepteKalan logo" />
+        <span>CepteKalan</span>
+      </div>
       <div class="lang"><a href="./privacy.html">TR</a> | EN</div>
-    </div>
+    </header>
 
     <section class="hero">
+      <div class="badge">Privacy</div>
       <h1>Privacy Policy</h1>
-      <p>Last updated: 2026-03-19</p>
+      <p class="subtitle">Last updated: March 20, 2026</p>
     </section>
 
-    <div class="grid">
+    <main class="grid">
       <section class="card">
-        <h2>What data is processed?</h2>
-        <p>Income, expense, category, and reminder records are processed to provide core app features.</p>
+        <h2>Data we process</h2>
+        <p>
+          The app processes income, expense, category, preferred currency, and reminder records to provide core personal finance features.
+        </p>
       </section>
 
       <section class="card">
-        <h2>Where is data stored?</h2>
-        <p>Your records are primarily stored on your device.</p>
+        <h2>Where data is stored</h2>
+        <p>
+          Your records are primarily stored on your device, supporting a local-first data model.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Notifications</h2>
+        <p>
+          Reminder notifications rely on your device notification system. App permissions are required for notifications to work properly.
+        </p>
       </section>
 
       <section class="card">
         <h2>Third-party services</h2>
-        <p>If advertising or analytics services are added in the future, this policy will be updated.</p>
+        <p>
+          If advertising, analytics, or additional external services are introduced in the future, this policy will be updated here.
+        </p>
       </section>
 
       <section class="card">
         <h2>Contact</h2>
-        <p><a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a></p>
+        <p>
+          For privacy-related questions:
+          <a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a>
+        </p>
       </section>
-    </div>
+    </main>
+
+    <a class="back" href="./en.html">← Back to support page</a>
+    <footer class="footer">© 2026 Caner Celik - CepteKalan</footer>
   </div>
 </body>
 </html>
