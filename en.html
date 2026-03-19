@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CepteKalan - Support</title>
+  <meta name="description" content="CepteKalan support page." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #121417;
+      --muted: #5f6673;
+      --line: #e7eaf0;
+      --brand: #2f6fed;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 860px; margin: 40px auto; padding: 0 16px; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 16px;
+    }
+    .lang a {
+      text-decoration: none; color: var(--muted); font-weight: 600; margin-right: 8px;
+    }
+    .lang a.active { color: var(--brand); }
+    .hero, .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 18px;
+    }
+    .hero h1 { margin: 0 0 8px 0; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .grid { display: grid; gap: 14px; margin-top: 14px; }
+    .card h2 { margin: 0 0 8px 0; font-size: 18px; }
+    .card p { margin: 0; }
+    a { color: var(--brand); }
+    .footer { color: var(--muted); font-size: 14px; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <strong>CepteKalan</strong>
+      <div class="lang"><a href="./index.html">TR</a> | EN</div>
+    </div>
+
+    <section class="hero">
+      <h1>CepteKalan - Support</h1>
+      <p>Support page for expense tracking, reminders, and app usage.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Contact</h2>
+        <p>
+          Email:
+          <a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>FAQ</h2>
+        <p><strong>Where is my data stored?</strong><br />Your data is stored on your device.</p>
+        <p><strong>Reminders are not working. What should I do?</strong><br />Please make sure notification permission is enabled in device settings.</p>
+      </section>
+
+      <section class="card">
+        <h2>Privacy</h2>
+        <p><a href="./privacy.html">Gizlilik Politikası (TR)</a></p>
+        <p><a href="./privacy-en.html">Privacy Policy (EN)</a></p>
+      </section>
+    </div>
+
+    <p class="footer">© 2026 Caner Celik</p>
+  </div>
+</body>
+</html>
