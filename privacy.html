@@ -3,61 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CepteKalan Gizlilik Politikası</title>
+  <title>CepteKalan - Gizlilik Politikası</title>
   <style>
+    :root {
+      --bg: #f7f8fb; --card: #fff; --text: #121417; --muted: #5f6673; --line: #e7eaf0; --brand: #2f6fed;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, Arial, sans-serif;
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 16px;
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.7;
-      color: #111;
     }
-    h1 { margin-bottom: 4px; }
-    .muted { color: #666; }
-    .card {
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 16px;
-    }
-    a { color: #0a66c2; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .wrap { max-width: 860px; margin: 40px auto; padding: 0 16px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .lang a { text-decoration: none; color: var(--muted); font-weight: 600; margin-left: 8px; }
+    .hero, .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .hero h1 { margin: 0 0 8px 0; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .grid { display: grid; gap: 14px; margin-top: 14px; }
+    a { color: var(--brand); }
   </style>
 </head>
 <body>
-  <h1>CepteKalan Gizlilik Politikası</h1>
-  <p class="muted">Son güncelleme: 2026-03-19</p>
+  <div class="wrap">
+    <div class="topbar">
+      <strong>CepteKalan</strong>
+      <div class="lang">TR | <a href="./privacy-en.html">EN</a></div>
+    </div>
 
-  <div class="card">
-    <h2>Toplanan Veriler</h2>
-    <p>
-      CepteKalan, gelir-gider takibi için oluşturduğunuz kayıtları uygulama içinde saklar.
-      Uygulama deneyimini sunmak için gerekli temel bilgiler dışında kişisel veri satışı yapılmaz.
-    </p>
-  </div>
+    <section class="hero">
+      <h1>Gizlilik Politikası</h1>
+      <p>Son güncelleme: 2026-03-19</p>
+    </section>
 
-  <div class="card">
-    <h2>Verilerin Kullanımı</h2>
-    <p>
-      Veriler; bütçe takibi, hatırlatıcı oluşturma ve uygulama özelliklerini çalıştırma amacıyla kullanılır.
-    </p>
-  </div>
+    <div class="grid">
+      <section class="card">
+        <h2>Toplanan Veriler</h2>
+        <p>CepteKalan, gelir-gider takibi için girilen verileri uygulama işlevlerini sağlamak amacıyla kullanır.</p>
+      </section>
 
-  <div class="card">
-    <h2>Üçüncü Taraf Hizmetler</h2>
-    <p>
-      Uygulamada zaman içinde üçüncü taraf hizmetler (ör. reklam/analitik) kullanılabilir.
-      Bu durumda gizlilik politikası güncellenir.
-    </p>
-  </div>
+      <section class="card">
+        <h2>Veri Saklama</h2>
+        <p>Kayıtlarınız temel olarak cihazınızda saklanır.</p>
+      </section>
 
-  <div class="card">
-    <h2>İletişim</h2>
-    <p>
-      Gizlilikle ilgili sorularınız için:
-      <a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a>
-    </p>
+      <section class="card">
+        <h2>Üçüncü Taraf Hizmetler</h2>
+        <p>İleride reklam veya analitik hizmetleri entegre edilirse bu politika güncellenir.</p>
+      </section>
+
+      <section class="card">
+        <h2>İletişim</h2>
+        <p><a href="mailto:caner.celik.2704@gmail.com">caner.celik.2704@gmail.com</a></p>
+      </section>
+    </div>
   </div>
 </body>
 </html>
